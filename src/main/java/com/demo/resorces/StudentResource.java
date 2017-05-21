@@ -4,6 +4,7 @@ import javax.ws.rs.GET;
 import javax.ws.rs.POST;
 import javax.ws.rs.Path;
 import javax.ws.rs.Produces;
+import javax.ws.rs.core.Response;
 
 import com.demo.model.Student;
 
@@ -27,12 +28,12 @@ public class StudentResource {
 	@POST
 	@Path("/post")
 	@Produces("application/xml")
-	public Student poststudent(){
+	public Response poststudent(Student student){
 		
-		Student student=new Student();
+	
+		String result="saved student"+student;
 		
-		
-		return student;
+		return Response.status(200).entity(result).build();
 	}
 	
 

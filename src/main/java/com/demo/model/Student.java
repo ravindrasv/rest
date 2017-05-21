@@ -27,5 +27,10 @@ public class Student {
 		this.address = address;
 	}
 	private  String address;
+	@Override
+	public String toString() {
+		
+		return "name"+this.name+"id"+this.id+"address"+this.address;
+	}
 
 }
